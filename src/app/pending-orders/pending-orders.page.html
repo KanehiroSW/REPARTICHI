@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <p class="ptit">PEDIDOS</p>
+    <p class="psub">PENDIENTES</p>
+  </div>
+  <img class="imgOrder" src="assets/Img-Orders/OLog.png" alt="Orders">
+
+  <ion-list class="main">
+
+  @for (pedido of pedidos; track pedido.idPedido) {  
+    <ion-item class="General" lines="none">
+      <ion-item class="Ocontainer ion-no-border" lines="none">
+        <div>
+          <img src="assets/pedidos.png" alt="Order" class="OIlog">
+          <div>
+            <p class="pped">!SOLICITUD DE PEDIDO¡</p>
+            <p class="pname">{{ pedido.numeroSerie }}</p>
+            <ion-button id="modal-{{pedido.idPedido}}" class="btnview" color="#72C28F">
+              <ion-icon class="iiview" name="eye"></ion-icon>
+            </ion-button>
+            <p class="pmonto">Total:</p>
+            <p class="pprice">{{ pedido.totalPedido | currency:'PEN' }}</p>
+          </div>
+          <div class="btns">
+            <ion-button color="success" class="btnOrder" (click)="updatePedidoStatus(pedido.idPedido, 'ACEPTADO')">
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-button> <!--BOTON ACEPTAR-->
+            <ion-button color="danger" class="btnOrder" (click)="updatePedidoStatus(pedido.idPedido, 'RECHAZADO')">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button> <!--BOTON CANCELAR-->
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-modal [trigger]="'modal-' + pedido.idPedido">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>PRODUCTOS ORDENADOS</ion-title>
+            </ion-toolbar>
+
+            @for (detalle of pedido.detallePedidos; track detalle.idDetalle) {
+            <ion-list>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="assets/Img-Orders/soda.jpg"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>{{ detalle.producto.nombreProducto }}</h2>
+                  <h3>Cantidad:</h3>
+                  <h3>{{ detalle.cantidad }}</h3>
+                  <h3>Precio:</h3>
+                  <h3>{{ detalle.precioUnitario | currency:'PEN' }}</h3>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          }
+          
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  }
+
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button class="AddPro" (click)="cerrarSesion()">
+      <ion-icon name="power-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

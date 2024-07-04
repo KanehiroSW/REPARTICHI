@@ -12,15 +12,13 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
 
   errorMessage: string = "";
-  selectedFile: File | null = null;
 
   registerForm = this.formBuilder.group({
-    nombreTienda: ['', Validators.required],
-    nombrePropietario: ['', Validators.required],
-    dniPropietario: ['', Validators.required],
-    direccion: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    dni: ['', Validators.required],
+    nombre: ['', Validators.required],
+    apellido: ['', Validators.required],
     telefono: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
 
@@ -32,26 +30,14 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {}
 
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0];
-  }
-
   register() {
     if (this.registerForm.valid) {
-      const formData = this.registerForm.value;
-      if (this.selectedFile) {
-        this.loginService.register(formData, this.selectedFile).subscribe({
-          next: () => {
-            console.log("Registro exitoso");
-            this.router.navigate(['/login']);
-          },
-          error: (error) => {
-            this.errorMessage = error;
-          }
-        });
-      } else {
-        this.errorMessage = "Seleccione una imagen";
-      }
+      this.loginService.register(this.registerForm.value).subscribe(response => {
+        console.log("Registro exitoso");
+        this.router.navigate(['/login']);
+      }, error => {
+        this.errorMessage = error;
+      });
     }
   }
 }

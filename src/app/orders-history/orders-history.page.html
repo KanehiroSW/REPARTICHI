@@ -1,0 +1,70 @@
+<ion-content>
+  <div class="header">
+    <p class="ptit">HISTORIAL</p>
+    <p class="psub">DE PEDIDOS</p>
+  </div>
+  <img class="imgReport" src="assets/History.png" alt="Report" />
+  <ion-list lines="none">
+    
+    @for (pedido of pedidos; track pedido.idPedido) {
+      <ion-item lines="none">
+        <ion-card>
+          <ion-card-header>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card-title class="estado-pedido">Pedido N°{{ pedido.numeroSerie }}</ion-card-title>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-card-title class="center-content estado-pedido" 
+                  [ngClass]="{'entregado': pedido.estadoPedido === 'ENTREGADO', 'rechazado': pedido.estadoPedido === 'RECHAZADO'}">
+                  {{ pedido.estadoPedido }}</ion-card-title>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-accordion-group>
+              <ion-accordion value="content-product">
+                <ion-item slot="header" color="light">
+                  <ion-label>Productos</ion-label>
+                </ion-item>
+                @for (detalle of pedido.detallePedidos; track detalle.idDetalle) {
+                  <div slot="content">
+                    <div class="Product ion-padding" slot="content">
+                      {{ detalle.producto.nombreProducto }}
+                    </div>
+                    <div class="Quantity ion-padding" slot="content">
+                      {{ detalle.cantidad }}
+                    </div>
+                  </div>
+                }
+              </ion-accordion>
+            </ion-accordion-group>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card-subtitle>Total:</ion-card-subtitle>
+                </ion-col>
+                <ion-col>
+                  <ion-card-subtitle>{{ pedido.totalPedido | currency }}</ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card-subtitle>Fecha:</ion-card-subtitle>
+                </ion-col>
+                <ion-col>
+                  <ion-card-subtitle>{{ pedido.fechaPedido | date:'dd/MM/yyyy' }}</ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+        </ion-card>
+      </ion-item>
+      }
+  
+  </ion-list>
+</ion-content>

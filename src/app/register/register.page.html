@@ -1,132 +1,43 @@
-<ion-content [fullscreen]="true">
-  <div class="container">
-    <ion-grid>
-      <h2>
-        ¡Aquí puedes crear una cuenta como repartidor en la
-        <span class="u-letter">U</span><span class="cv-letter">CV</span>!
-      </h2>
-      <p>Vamos, siga los siguientes pasos</p>
-      <div class="center-inputs">
-        <div class="div-inputs">
+<ion-content>
+  <div class="form-container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <ion-item>
+        <ion-label position="floating">DNI</ion-label>
+        <ion-icon name="card" slot="start"></ion-icon>
+        <ion-input formControlName="dni"></ion-input>
+      </ion-item>
 
-<!-- INICIO FORM -->
-        <form [formGroup]="registerForm" (ngSubmit)="register()">
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="text"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="8"
-                required="true"
-                label="DNI"
-                labelPlacement="floating"
-                formControlName="dniPropietario"
-                helperText="Ingrese su DNI para completar el campo"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="text"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="50"
-                required="true"
-                label="Nombres"
-                labelPlacement="floating"
-                formControlName="nombrePropietario"
-                helperText="Ingrese su nombre completo"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-icon name="people" slot="start"></ion-icon>
+        <ion-input formControlName="apellido"></ion-input>
+      </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="number"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="50"
-                required="true"
-                label="Apellidos"
-                labelPlacement="floating"
-                formControlName="apellidosPropietario"
-                helperText="Ingrese sus apellidos completo"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-icon name="call" slot="start"></ion-icon>
+        <ion-input formControlName="telefono"></ion-input>
+      </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="text"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="9"
-                minlength="9"
-                required="true"
-                label="Telefono"
-                labelPlacement="floating"
-                formControlName="telefono"
-                helperText="Ingrese su número telefonico"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="email"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="100"
-                required="true"
-                label="Email"
-                labelPlacement="floating"
-                formControlName="email"
-                helperText="Ingrese correo electronico para la empresa"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-icon name="lock-closed" slot="start"></ion-icon>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-input
-                type="password"
-                clear-input="true"
-                fill="outline"
-                counter="true"
-                maxlength="50"
-                required="true"
-                label="Contraseña"
-                labelPlacement="floating"
-                formControlName="password"
-                helperText="Ingrese la contraseña para la cuenta del negocio"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <ion-col>
-              <ion-button type="submit" class="button-create" expand="block">
-                Crear
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        </form>
-<!-- FIN FORM -->
-
-          <div class="login-divider"></div>
-        </div>
-      </div>
-    </ion-grid>
+      <ion-button expand="full" type="submit" class="submit-button">Registrar</ion-button>
+    </form>
   </div>
 </ion-content>

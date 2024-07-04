@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.header{
+  position: absolute;
+  background: blue;
+  height: 130px;
+  margin: 0px;
+  width: 100%;
+}
+
+.AddPro {
+  --background: rgb(199, 43, 43) ;
+}
+
+.imgOrder{
+  position: absolute;
+  width: 130px;
+  height: 135px;
+  top: 10px;
+  right: 0;
+}
+
+.Ocontainer{
+  margin: 5px 0px 5px 0px;
+  padding: 0px;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.485);
+}
+
+.General{
+  margin-top: 10px;
+  left: 15px;
+  width: 91%;
+}
+
+.main{
+  background: white;
+  margin-top: 120px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.159);
+  height: auto;
+}
+
+.ptit{
+  font-family: "Outfit", sans-serif;
+  color: #F2F2F2;
+  font-optical-sizing: auto;
+  font-size: 48px;
+  margin: 15px 0px 0px 10px;
+  font-weight: 650;
+}
+
+.psub{
+  font-family: "Outfit", sans-serif;
+  color: #F2F2F2;
+  font-optical-sizing: auto;
+  font-size: 25px;
+  margin-top: 2px;
+  margin-left: 11px;
+}
+
+.OIlog{
+  border-radius: 50px;
+  margin-left: 1px;
+}
+
+.pname, .btnview{
+  display: inline-block;
+}
+
+
+.pped,.pname,.price,.pmonto{
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  color: black;
+}
+
+.pped{
+  text-align: center;
+  font-weight: 800px;
+  font-size: 23px;
+  margin:0px;
+  margin-top: 5px;
+  color: rgb(255, 155, 5);
+}
+
+.pprice{
+  margin-left: 60%;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 0px;
+}
+
+.btnview{
+  --border-radius: 100%;
+  --box-shadow: none;
+  --ripple-color: transparent;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  color: #72C28F;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.iiview{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.btnOrder{
+  --box-shadow: none;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  --border-radius: 50px;
+  height: 35px;
+  width: 60px;
+}
+
+.pmonto{
+  position: fixed;
+  margin-top: 1px;
+  font-size: 18px;
+}
+
+.pname{
+  font-size: 18px;
+}
+
+.btns{
+  margin-left: 30%;
+  height: 40px;
+  margin-bottom: 7px;
+}
+
+
+ion-modal {
+  --height: 50%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding: 25px;
+}
+
+
+ion-modal::part(backdrop) {
+  background: rgb(187, 187, 187);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  --background: #FFB450;
+  --color: white;
+}
+
+h2{
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  color: black;
+  font-size: 20px;
+}
+
+h3{
+  font-family: "Outfit", sans-serif;
+  color: black;
+  font-size: 18px;
+  display: inline-block;
+}

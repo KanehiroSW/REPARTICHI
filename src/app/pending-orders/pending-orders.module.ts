@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
 
-import { UpdatePageRoutingModule } from './update-routing.module';
-
-import { UpdatePage } from './update.page';
+import { PendingOrdersPageRoutingModule } from './pending-orders-routing.module';
+import { PendingOrdersPage } from './pending-orders.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UpdatePageRoutingModule
+    PendingOrdersPageRoutingModule
   ],
-  declarations: [UpdatePage]
+  declarations: [PendingOrdersPage]
 })
-export class UpdatePageModule {}
+export class PendingOrdersPageModule {}

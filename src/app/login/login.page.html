@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true">
+  <div class="centerx">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <img src="assets/Dashy-Logo.png" alt="Logo" class="center-image" />
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <div class="center-inputs">
+        <div class="div-inputs">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <ion-row>
+              <ion-col>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input
+                  formControlName="dniPropietario"
+                  type="text"
+                  placeholder="Usuario"
+                  id="dniPropietario"
+                >
+                </ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input
+                  formControlName="password"
+                  type="password"
+                  placeholder="Contraseña"
+                  id="password"
+                >
+                  <ion-input-password-toggle
+                    slot="end"
+                  ></ion-input-password-toggle>
+                </ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item lines="none" class="itselect">
+                  <ion-select class="iselect" formControlName="userType" label-placement="stacked" interface="popover" label="Tipo:" placeholder="Seleccionar">
+                    <ion-select-option value="Repartidor">Repartidor</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button type="submit" class="button-login" expand="block">
+                  Iniciar Sesión
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </form>
+
+          <div class="login-divider"></div>
+          <h2>¿Aún no se ha registrado? Cree una cuenta</h2>
+          <ion-row>
+            <ion-col>
+              <ion-button
+                class="button-create"
+                expand="block"
+                routerLink="/register"
+              >
+                Crear Cuenta
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>

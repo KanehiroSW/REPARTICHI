@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+ion-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.itselect{
+  --background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.iselect{
+  color: rgb(2, 2, 2);
+  font-size: 20px;
+  font-family: "Outfit", sans-serif;
+  --background: transparent;
+  width: 10px;
+}
+
+.center-image {
+  width: 255px;
+}
+
+div {
+  background-color: #93c0ec;
+  padding: 10px;
+}
+
+.center-inputs {
+  width: 100%;
+}
+
+.div-inputs {
+  max-width: 500px !important;
+  margin: 0 auto;
+  background-color: #c5d5ec;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.login-divider {
+  border-bottom: 1px solid #000000;
+  background-color: transparent;
+  padding: 5px;
+}
+
+ion-label {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  padding-left: 10px;
+}
+
+ion-input {
+  font-family: "Outfit", sans-serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: transparent;
+  color: #000000;
+  border-radius: 8px;
+  line-height: 20px;
+  --padding-start: 20px;
+}
+
+ion-button {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-family: "Outfit", sans-serif;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label-rol {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  align-content: center;
+}
+
+.center-vertically-row {
+  display: flex;
+  align-items: center;
+}
+
+.select-input {
+  --padding-start: 20%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  --border-color: transparent;
+  color: #0a0eee;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ion-button {
+  --background: transparent;
+  --background-hover: #525558;
+  --color: #000000;
+  --border-radius: 10px;
+  --border-color: #bdbebe;
+  --border-style: solid;
+  --border-width: 0.05cm;
+}
+
+h2 {
+  color: #000000;
+  font-family: "Outfit", sans-serif;
+  font-size: large;
+  text-align: center;
+}
+
+.button-login {
+  font-family: "Outfit", sans-serif;
+  padding: 5px;
+  --box-shadow: 0 2px 6px 0 #1a4fc2b1;
+  font-size: 20px;
+}
+
+.button-create {
+  --box-shadow: 0 2px 6px 0 #6b1ac2b1;
+  font-size: 16px;
+}
